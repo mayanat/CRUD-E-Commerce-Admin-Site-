@@ -1,0 +1,72 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Toy Store</h4>
+                      <p class="card-category"> All Toy Type</p>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                  <th>
+                                    Category
+                                  </th>
+                                  <th>
+                                    Category Number
+                                  </th>
+                                  <th>
+                                    Category Img
+                                  </th>
+                                  <th>
+                                     Toy Name
+                                  </th>
+                                  <th>
+                                     Toy Price
+                                  </th>
+                                  <th>Is Toy On SAle</th>
+                                  <th>Toy Sale Price</th>
+                                  <th>Toy Description</th>
+                                  <th>Toy Img</th>
+                                  <th>Delete</th>
+                                  <th>Update</th>
+                              </thead>
+                              <tbody>
+                                  <tr *ngFor="let toy of toys">
+                                      <td>
+                                          {{toy.category}}                           </td>
+                                      <td>
+                                        {{toy.categoryNum}}  
+                                      </td>
+                                      <td>
+                                       <img src="{{toy.categoryImg}}" alt="" style="height:50px ; width: 50px">   
+                                      </td>
+                                      <td>
+                                        {{toy.tName}}  
+                                      </td>
+                                      <td class="text-primary">
+                                        {{toy.tPrice}}  
+                                      </td>
+                                      <td>  {{toy.tOnSale}}  </td>
+                                      <td>  {{toy.tSalePrice}}  </td>
+                                      <td>  {{toy.tDescription}}  </td>
+                                      <td> <img src="{{toy.tImg}}" alt=""  style="height:100px ; width: 80px">   </td>
+                                      <td><button mat-raised-button (click)="openDeleteDialog(toy)">X</button></td>
+                                      <td><button mat-raised-button (click)="openUpdateDialog(toy)">update</button></td>
+                                  </tr>
+                                  
+                              </tbody>
+                          </table>
+                          
+                      </div>
+                  </div>
+              </div><button mat-raised-button (click)="openDialog()">Add Toy</button>
+             <a href="https://homework-575fa.firebaseapp.com"><button mat-raised-button >Go To Toy Site</button></a> 
+          </div>
+          
+  <button mat-raised-button  (click)="goto()">Go To To dash bord</button>
+      </div>
+  </div>
+</div>
