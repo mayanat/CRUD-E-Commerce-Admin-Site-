@@ -17,7 +17,7 @@ export class TableListComponent implements OnInit {
  selectedToy: ToyC;
   constructor(private toyServ:ToyServiceService, public dialog: MatDialog, private router:Router) { }
 
-  //create car collection - for display
+  //create toy collection - for display
   ngOnInit() {
     this.toyServ.getToys().subscribe(data => {
       this.toys = data.map(e => {
@@ -68,7 +68,7 @@ export class TableListComponent implements OnInit {
     });
   }
 
-  //create car
+  //create toy
   create( category: string,categoryNum: string,categoryImg: string,tName:string,tPrice: number,
     tOnSale:boolean,tSalePrice: number,tDescription:string, tImg:string){
     const toy: ToyC = {
@@ -86,13 +86,13 @@ export class TableListComponent implements OnInit {
     this.toyServ.createToy(toy);
   }
 
-  //update existing car
+  //update existing toy
   update(toy: ToyC) {
     this.selectedToy=toy;
   
   }
 
-  //delete exiting car
+  //delete exiting toy
   delete(id: string) {
     this.toyServ.deleteToy(id);
   }
