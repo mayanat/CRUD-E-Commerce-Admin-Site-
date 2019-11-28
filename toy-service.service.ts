@@ -27,7 +27,6 @@ export class ToyServiceService {
 
   ////uuuuuuuuuuuu
   updateToy(toy: any) {
-    //delete car.id;
     console.log("Key :"  + toy.id)
     this.firestore.doc('toys/' +  toy.id ).update(toy);
   }
